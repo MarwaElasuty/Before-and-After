@@ -1,0 +1,158 @@
+:root{
+    --brand-color:rgb(0, 55, 128);
+    --paragraph-color:white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+blockquote{
+    font-size: 2rem;
+    font-style: italic;
+    width: 50%;
+    position: relative;
+    margin: 40px 50px;
+}
+blockquote::before{
+    content: open-quote;
+    top: -50px;
+    left: -50px;
+}
+
+blockquote::after{
+    content: close-quote;
+
+}
+
+blockquote::after, blockquote::before{
+    font-size: 6rem;
+    position: absolute;
+}
+
+.decorative{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.decorative > div{
+    margin: 15px 0;
+
+}
+.decorative-div{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--brand-color);
+
+    color: peachpuff;
+    padding: 15px;
+}
+.decorative-div::before{
+    content: "";
+    width: 406px;
+    height: 409px;
+    background-image: linear-gradient(rgb(0, 183, 255) 60%, yellow);
+    position: absolute;
+    z-index: -1;
+}
+
+.hover-btn {
+    padding: 20px 40px;
+    text-transform: uppercase;
+    border: 2px solid #1ea2e9;
+    color: #1ea2e9;
+    text-decoration: none;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s ease;
+    margin: 40px 0;
+  }
+  
+  .hover-btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #1ea2e9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+    z-index: -1;
+  }
+  
+  .hover-btn:hover {
+    color: white;
+  }
+  .hover-btn:hover::before {
+    transform: translateX(0);
+  }
+  
+
+  .toggle{
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 15px;
+  }
+
+  .toggle{
+    opacity: 0;
+  }
+
+  .toggle + label{
+    position: relative;
+    padding-left: 5rem;
+  }
+
+  .toggle + label::before{
+    content: "";
+    background-color: rgb(180, 180, 180);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4.5rem;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+  }
+
+
+  .toggle + label::after{
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1.25rem;
+    transition: transform 1s;
+  }
+
+  .toggle:checked + label::before{
+    background-color: forestgreen;
+  }
+
+  
+  .toggle:checked + label::after{
+    transform: translateX(2rem);
+  }
+
+  section{
+    background-color: var(--brand-color);
+    color: var(--paragraph-color);
+  }
